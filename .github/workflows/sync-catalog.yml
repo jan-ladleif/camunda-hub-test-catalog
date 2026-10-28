@@ -20,7 +20,7 @@ jobs:
           # SaaS values. For Self-Managed, replace these with your installation's
           # values and remove CAMUNDA_CONSOLE_OAUTH_AUDIENCE — Management Identity
           # adds the web-modeler-public-api audience to the token (see README.md).
-          CAMUNDA_OAUTH_URL: https://login.cloud.camunda.io/oauth/token
-          CAMUNDA_CONSOLE_OAUTH_AUDIENCE: api.cloud.camunda.io
-          CAMUNDA_HUB_BASE_URL: https://hub.camunda.io
+          CAMUNDA_OAUTH_URL: ${{ secrets.CAMUNDA_OAUTH_URL }}
+          CAMUNDA_CONSOLE_OAUTH_AUDIENCE: ${{ secrets.CAMUNDA_CONSOLE_OAUTH_AUDIENCE }}
+          CAMUNDA_HUB_BASE_URL: ${{ secrets.CAMUNDA_HUB_BASE_URL }}
         run: bash scripts/sync-catalog.sh
